@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="notifications" class="notifications-container"></div>
+  <div class="container">
+    <header>
+      <h1>Event Management System</h1>
+    </header>
+
+    <!-- Event Creation Form -->
+    <section class="event-form">
+      <h2>Create a New Event</h2>
+      <form id="eventForm">
+        <label for="title">Event Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter event title" required>
+
+        <label for="date">Event Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Event Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" placeholder="Enter event description" required></textarea>
+
+        <label for="attendees">Attendees (Comma separated emails):</label>
+        <input type="text" id="attendees" name="attendees" placeholder="Enter attendee emails" required>
+
+        <button type="submit">Create Event</button>
+      </form>
+    </section>
+
+    <!-- Event List -->
+    <section class="event-list">
+      <h2>Scheduled Events</h2>
+      <ul id="eventList"></ul>
+      <!-- Event List with RSVP -->
+        <div class="event-list">
+            <h2>Upcoming Events</h2>
+            <ul id="event-list">
+                <!-- Example Event -->
+                <li class="event-card">
+                    <h3>Event Title 1</h3>
+                    <p>Description: Lorem ipsum dolor sit amet.</p>
+                    <p>Date: 2024-09-20</p>
+                    <p>Location: Online</p>
+
+                    <!-- RSVP Buttons -->
+                    <div class="rsvp-section">
+                        <button class="rsvp-btn" onclick="rsvpEvent('yes', 1)">RSVP Yes</button>
+                        <button class="rsvp-btn" onclick="rsvpEvent('no', 1)">RSVP No</button>
+                    </div>
+
+                    <!-- RSVP Status -->
+                    <p id="rsvp-status-1">RSVP Status: <span>Pending</span></p>
+                </li>
+
+                <!-- Add more events similarly -->
+                <div class="attendees-section" id="attendees-1">
+                    <h4>Attendees:</h4>
+                    <ul id="attendees-list-1">
+                        <!-- Attendees will be dynamically added here -->
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <!-- Event Scheduling Form -->
+    <!-- Event List with RSVP and Attendees Management -->
+    <div class="event-list">
+        <h2>Upcoming Events</h2>
+        <ul id="event-list">
+            <!-- Example Event -->
+            <li class="event-card" id="event-1">
+                <h3>Event Title 1</h3>
+                <p>Description: Lorem ipsum dolor sit amet.</p>
+                <p>Date: 2024-09-20</p>
+                <p>Location: Online</p>
+
+                <!-- RSVP Buttons -->
+                <div class="rsvp-section">
+                    <button class="rsvp-btn" onclick="rsvpEvent('yes', 1)">RSVP Yes</button>
+                    <button class="rsvp-btn" onclick="rsvpEvent('no', 1)">RSVP No</button>
+                </div>
+
+                <!-- Attendees List -->
+                <div class="attendees-section" id="attendees-1">
+                    <h4>Attendees:</h4>
+                    <ul id="attendees-list-1">
+                        <!-- Attendees will be dynamically added here -->
+                    </ul>
+                </div>
+            </li>
+            <!-- Add more events similarly -->
+        </ul>
+    </div>
+
+    <div class="event-scheduling">
+        <h2>Schedule New Event</h2>
+        <form id="event-form">
+            <label for="event-title">Event Title:</label>
+            <input type="text" id="event-title" name="event-title" required>
+
+            <label for="event-description">Description:</label>
+            <textarea id="event-description" name="event-description" required></textarea>
+
+            <label for="event-date">Date:</label>
+            <input type="date" id="event-date" name="event-date" required>
+
+            <label for="event-time">Time:</label>
+            <input type="time" id="event-time" name="event-time" required>
+
+            <label for="event-location">Location:</label>
+            <input type="text" id="event-location" name="event-location" required>
+
+            <button type="submit">Add Event</button>
+        </form>
+
+        <!-- <h2>Event List</h2> -->
+        <ul id="event-list">
+            <!-- Events will be dynamically added here -->
+        </ul>
+    </div>
+
+
+    </section>
+
+    <!-- Notifications Section -->
+    <section class="notification">
+      <h2>Notifications & Reminders</h2>
+      <button id="sendReminders">Send Reminders</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
